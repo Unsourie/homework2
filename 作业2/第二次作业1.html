@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        width: 500px;
+        border-style: solid;
+        border-color: grey;
+      }
+      form{
+        margin-left: 1em;
+        margin-bottom: 1em;
+      }
+      p.welcome{
+        color:blue;
+      }
+      span.mustFill{
+        color: red;
+      }
+      .verification{
+        text-indent: 1em;
+      }
+      .gender,.birday,.age,.nativePlace,.salary{
+        text-indent: 2em;
+      }
+
+    </style>
+</head>
+
+<body>
+    <form action="URL" name="phoneNumber" method="get" target="_blank">
+        <p class="welcome">欢迎注册会员</p>
+        <div class="tel">
+            <label for="tel">
+                电话号码：<input type="tel" name="tel" id="tel" placeholder="11位手机号">
+            </label>
+            <span class="mustFill">必填</span>
+        </div>
+        <br>
+        <div class="password">
+            <label for="password">
+                创建密码：<input type="password" name="password" class="password" placeholder="8位密码">
+            </label>
+            <span class="mustFill">必填</span>
+        </div>
+        <br>
+        <div calss="mailbox">
+            <label for="mailbox">
+                创建邮箱：<input type="email" name="mailbox" calss="mailbox" placeholder="列如:wustzz@sina.com">
+            </label>
+            <span class="mustFill">必填</span>
+        </div>
+        <br>
+        <div class="verification">
+            <label for="verificationCode">
+                验证码：<input type="text" name="verificationCode" class="verificationCode">
+            </label>
+        </div>
+        <br>
+        <div class="gender">
+            性别：
+            <input type="radio" name="gender" value="male">男
+            <input type="radio" name="gender" value="female">女
+        </div>
+        <div class="birday">
+            生日：<input type="date" name="date" class="date">
+        </div>
+        <br>
+        <div class="age">
+            <label for="age">
+                年龄：<input type="number" name="age" class="age">
+            </label>
+        </div>
+        <br>
+        <div class="nativePlace">
+            籍贯：
+            <select name="sheng" class="sheng" size="1">
+                <option value="1">河北</option>
+                <option value="2">山西</option>
+                <option value="3">吉林</option>
+                <option value="4">辽宁</option>
+                <option value="5">黑龙江</option>
+                <option value="6">陕西</option>
+                <option value="7">甘肃</option>
+                <option value="8">青海</option>
+                <option value="9">山东</option>
+                <option value="10">福建</option>
+                <option value="11">浙江</option>
+                <option value="12">台湾</option>
+                <option value="13">河南</option>
+                <option value="14" selected="selected">湖北</option>
+                <option value="15">湖南</option>
+                <option value="16">江西</option>
+                <option value="17">江苏</option>
+                <option value="18">安徽</option>
+                <option value="19">广东</option>
+                <option value="20">海南</option>
+                <option value="21">四川</option>
+                <option value="22">贵州</option>
+                <option value="23">云南</option>
+                <option value="24">北京</option>
+                <option value="25">上海</option>
+                <option value="26">天津</option>
+                <option value="27">重庆</option>
+                <option value="28">内蒙古自治区</option>
+                <option value="29">新建维吾尔自治区</option>
+                <option value="30">宁夏回族自治区</option>
+                <option value="31">广西壮族自治区</option>
+                <option value="32">西藏自治区</option>
+                <option value="33">香港特别行政区</option>
+                <option value="34">澳门特别行政区</option>
+    
+                <!--多级选择-->
+    
+            </select>
+        </div>
+        <br>
+        <div class="educationBackGround">
+            个人学历：
+            <select name="educationBackGround" class="educationBackGround">
+                <option value="0">未上过学</option>
+                <option value="1">小学</option>
+                <option value="2">初中</option>
+                <option value="3">高中</option>
+                <option value="4" selected="selected">本科</option>
+                <option value="5">专科</option>
+                <option value="6">研究生</option>
+                <option value="7">博士</option>
+            </select>
+        </div>
+        <br>
+        <div class="salary">
+            月薪：
+            <input type="range" id="salary" name="score" min="0" max="10000" step="100" value="5000" >
+            <span id="msg">
+                <script>
+                    var msg = document.getElementById("msg"); // 根据id值找到span元素
+                    window.onload = function () { 
+                    msg.innerHTML = document.getElementById("salary").value; // 获取区间域初始value值
+                    }
+                    document.getElementById("salary").onchange = function () { 
+                    msg.innerHTML = this.value; // 将当前区间域的value作为span元素的内容
+                    }
+                    </script>
+            </span>
+        </div>
+        <br>
+        <div class="hobby">
+            个人爱好：
+            <input type="checkbox" name="hobby" value="sing">唱歌
+            <input type="checkbox" name="hobby" value="run">跑步
+            <input type="checkbox" name="hobby" value="swing">游泳
+        </div>
+        <br>
+        <div class="picture">
+            个人照片：
+            <input type="file" name="picture" accept="image*/"><!--照片预览-->
+        </div>
+        <br>
+        <div class="selfIntroduction">
+            <textarea name="selfIntroduction" class="selfIntroduction" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <div class="buttpon">
+            <input type="submit" value="提交">
+            <input type="reset" value="重填">
+        </div>
+    </form>
+</body>
+
+</html>
